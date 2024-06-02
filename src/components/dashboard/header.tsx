@@ -19,17 +19,9 @@ import {
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Sheet, SheetTrigger, SheetContent } from "../ui/sheet";
-import SideNav from "./sideNav";
 import Link from "next/link";
 import { NavItems } from "@/lib/navigationLinks";
 import { useState } from "react";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-} from "../ui/card";
 
 function Header() {
   const [isSubLinksOpen, setIsOpenSubLinks] = useState(false);

@@ -8,13 +8,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "../ui/button";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-} from "../ui/card";
+
 import Link from "next/link";
 import { NavItems } from "@/lib/navigationLinks";
 import clsx from "clsx";
