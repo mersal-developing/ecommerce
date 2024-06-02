@@ -42,9 +42,14 @@ function Header() {
         <SheetContent side="left" className="w-72 p-0">
           <div className="flex h-full max-h-screen flex-col">
             <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
-              <Link href="/" className="flex items-center gap-2 font-semibold">
-                <span className="">MM</span>
-              </Link>
+              <SheetTrigger asChild>
+                <Link
+                  href="/"
+                  className="flex items-center gap-2 font-semibold"
+                >
+                  <span className="">MM</span>
+                </Link>
+              </SheetTrigger>
             </div>
             <div className="flex-1">
               <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
@@ -66,33 +71,36 @@ function Header() {
                       {isSubLinksOpen && (
                         <div className="pl-8">
                           {item.subItems.map((subItem, v) => (
-                            <Link
-                              key={v}
-                              href={subItem.link ? subItem.link : ""}
-                              className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-                            >
-                              <subItem.icon className="h-4 w-4" />
+                            <SheetTrigger asChild key={v}>
+                              <Link
+                                href={subItem.link ? subItem.link : ""}
+                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                              >
+                                <subItem.icon className="h-4 w-4" />
 
-                              {subItem.name}
-                            </Link>
+                                {subItem.name}
+                              </Link>
+                            </SheetTrigger>
                           ))}
                         </div>
                       )}
                     </div>
                   ) : !item.hide ? (
-                    <Link
-                      key={i}
-                      href={item.link ? item.link : ""}
-                      className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-                    >
-                      <item.icon className="h-4 w-4" />
-                      {item.name}
-                      {item.badge && (
-                        <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                          {item.badge}
-                        </Badge>
-                      )}
-                    </Link>
+                    <SheetTrigger asChild key={i}>
+                      <Link
+                        key={i}
+                        href={item.link ? item.link : ""}
+                        className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                      >
+                        <item.icon className="h-4 w-4" />
+                        {item.name}
+                        {item.badge && (
+                          <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
+                            {item.badge}
+                          </Badge>
+                        )}
+                      </Link>
+                    </SheetTrigger>
                   ) : (
                     <></>
                   )
