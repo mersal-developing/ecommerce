@@ -29,7 +29,7 @@ function SideNav({ show }: { show: boolean }) {
   return (
     <aside
       className={clsx(
-        "fixed inset-y-0 left-0 z-10 w-72 flex-col border-r bg-background sm:flex hidden",
+        "sticky h-screen inset-y-0 left-0 z-10 w-72 flex-col border-r bg-background sm:flex hidden",
         {
           '!flex': show,
         }
@@ -98,22 +98,6 @@ function SideNav({ show }: { show: boolean }) {
                 )
               )}
             </nav>
-          </div>
-          <div className="mt-auto p-4">
-            <Card x-chunk="dashboard-02-chunk-0">
-              <CardHeader className="p-2 pt-0 md:p-4">
-                <CardTitle>Upgrade to Pro</CardTitle>
-                <CardDescription>
-                  Unlock all features and get unlimited access to our support
-                  team.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="p-2 pt-0 md:p-4 md:pt-0">
-                <Button size="sm" className="w-full">
-                  Upgrade
-                </Button>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>
