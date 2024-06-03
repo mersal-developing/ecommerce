@@ -13,7 +13,7 @@ import Link from "next/link";
 import { NavItems } from "@/lib/navigationLinks";
 import clsx from "clsx";
 
-function SideNav({ show }: { show: boolean }) {
+function SideNav({ show }: { show?: boolean }) {
   const [isSubLinksOpen, setIsOpenSubLinks] = useState(false);
 
   const toggleProducts = () => {
